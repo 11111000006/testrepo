@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id ="Myclock"></div>
+<script type="text/javascript">
+	function clock() {
+	var today=new Date();            //获得当前时间
+	var yy=today.getFullYear();      //获得当前年份
+	var mm=today.getMonth();         //获得当前月份
+	var monthday=today.getDate();    //获得一个月当中的某一天
+	var day=today.getDay();          //获得一个礼拜当中的某一天
+	var hh=today.getHours();         //获得当前小时
+	var min=today.getMinutes();      //获得分钟   
+	var seconds=today.getSeconds();  //获得秒
+    if(hh<12){
+    	document.write("您好欢迎来到贵美商城"+" \ne ");
+    	document.getElementById("Myclock").innerHTML=+yy+"年"+mm+"月"+monthday+"日"+"&nbsp&nbsp"+hh+":"+min+":"+seconds+"&nbsp AM"+"&nbsp星期"+day;
+        
+    }else{
+    	document.getElementById("Myclock").innerHTML="您好欢迎来到贵美商城"+"\n"+yy+"年"+mm+"月"+monthday+"日"+"&nbsp&nbsp"+hh+":"+min+":"+seconds+"&nbsp PM"+"&nbsp星期"+day;
+    }
+    
+}
+           var myTime=setInterval("clock()",1000);
+</script>
+</body>
+</html>

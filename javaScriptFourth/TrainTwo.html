@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TrainTwo</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Person() {
+	}
+		Person.prototype.name="郎晓明";
+		Person.prototype.age="38";
+		Person.prototype.job="中国内地男演员、歌手";
+		Person.prototype.address="中国北京海淀区";
+		Person.prototype.showInfo=function(){
+			alert("姓名："+this.name+"\n"+"年龄"+this.age+"\n"+"工作:"+this.job+"\n"+"住址:"+this.address);
+		}
+        var per=new Person();
+        per.showInfo();
+</script>
+</body>
+</html>

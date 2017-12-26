@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trainthree</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Person() {
+	   this.nation="汉族";
+	   this.skinColor="黄色";
+	}
+     Person.prototype.getnation=function(){
+     	return this.nation;
+     }
+     Person.prototype.getskinColor=function(){
+     	return this.skinColor;
+     }
+	function Woman() {
+	    this.sex="女";
+     }
+     Woman.prototype=new Person();
+	 Woman.prototype.getsex=function(){
+     	return this.sex;
+     }
+	var woman1=new Woman();
+	document.write("民族:"+woman1.getnation()+"<br/>");
+	document.write("肤色:"+woman1.getskinColor()+"<br/>");
+	document.write("性别:"+woman1.getsex()+"<br/>");
+
+</script>
+</body>
+</html>

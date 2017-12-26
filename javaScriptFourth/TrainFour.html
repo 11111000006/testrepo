@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TrainFour</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Person() {
+	   this.name="张三";
+	   this.chinese="98";
+	   this.math="80";
+	}
+     Person.prototype.getname=function(){
+     	return this.name;
+     }
+     Person.prototype.getchinese=function(){
+     	return this.chinese;
+     }
+     Person.prototype.getmath=function(){
+     	return this.math;
+     }
+	function Student() {
+	    this.age="25";
+     }
+     Student.prototype=new Person();
+	 Student.prototype.getage=function(){
+     	return this.age;
+     }
+	var stu=new Student();
+	document.write("名字:"+stu.getname()+"<br/>");
+	document.write("语文:"+stu.getchinese()+"<br/>");
+	document.write("数学:"+stu.getmath()+"<br/>");
+	document.write("年龄"+stu.getage());
+</script>
+</body>
+</html>

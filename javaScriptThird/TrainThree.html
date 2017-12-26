@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课工场论坛列表</title>
+    <link href="bbs.css" rel="stylesheet">
+</head>
+<body>
+<div class="bbs">
+    <header><span onclick="Test()">我要发帖</span></header>
+    <section>
+        <ul>
+        	<li></li>
+        </ul>
+    </section>
+    <div class="post">
+        <input class="title" placeholder="请输入标题（1-50个字符）">
+        所属版块：<select><option>请选择版块</option><option>电子书籍</option><option>新课来了</option><option>新手报到</option><option>职业规划</option></select>
+        <textarea class="content"></textarea>
+        <input class="btn" value="发布">
+    </div>
+</div>
+<script type="text/javascript">
+	function Test() {
+		var num=Math.floor(Math.random()*4+1); 　//输出1～4之间的随机整数
+        var po=document.getElementById("post");
+        po.style.display="none";
+        var img=document.createElement("img");
+        var titleH1=document.createElement("h1");
+        var titMu=document.createElement("span");
+        var qy=document.getElementById("qq");
+        var title=document.getElementById("title").value;
+        var mu=document.getElementById("muk").value;
+        var now = new Date(); 
+var year = now.getFullYear(); //年 
+var month = now.getMonth() + 1; //月 
+var day = now.getDate(); //ri
+var time=year+"-"+month+"-"+day;
+titleH1.innerHTML=title;
+titMu.innerHTML="<br><br>"+"板块："+mu+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发表时间："+time;
+if(num==1){
+img.setAttribute("src","images/tou01.jpg");
+}else if(num==2){
+img.setAttribute("src","images/tou02.jpg");
+}else if(num==3){
+img.setAttribute("src","images/tou03.jpg");
+}else if(num==4){
+img.setAttribute("src","images/tou04.jpg");
+}
+
+var aa=document.getElementById("ull");
+//添加li
+　　　　var li = document.createElement("li");
+　　　　//设置 li 属性
+　　　　li.setAttribute("id", "newli");
+
+li.appendChild(img);
+　　　　li.appendChild(titleH1);
+li.appendChild(titMu);
+　　 　aa.appendChild(li);
+//li.insertBefore(qy,li);
+
+	}
+</script>
+</body>
+</html>

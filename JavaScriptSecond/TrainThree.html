@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>完善当当购物车页面</title>
+    <link type="text/css" rel="stylesheet" href="cs.css" />
+</head>
+<body>
+<div class="content">
+    <div class="logo">
+        <img src="images/dd_logo.jpg"><span onclick="close_plan()">关闭</span>
+    </div>
+    <div class="cartList">
+        <ul>
+            <li>¥<input type="text" name="price" value="21.90"></li>
+            <li><input type="button" name="minus" onclick="minus(0)" value="-" ><input type="text" name="amount" value="1"><input type="button" name="plus" onclick="plus(1)" value="+"></li>
+            <li id="price0">¥21.90</li>
+            <li><p onclick="collection()">移入收藏</p><p onclick="del()">删除</p></li>
+        </ul>
+        <ul>
+            <li>¥<input type="text" name="price" value="24.00"></li>
+            <li><input type="button" name="minus" onclick="minus(0)" value="-" ><input type="text" name="amount" value="1"><input type="button" name="plus" onclick="plus(1)" value="+"></li>
+            <li id="price1">¥24.00</li>
+            <li><p onclick="collection()">移入收藏</p><p onclick="del()">删除</p></li>
+        </ul>
+        <ol>
+            <li id="totalPrice">&nbsp;</li>
+            <li><span onclick="GetMoney()">结 算</span></li>
+        </ol>
+    </div>
+</div>
+<script type="text/javascript">
+function close_plan(){
+    window.close();
+}
+function collection(){
+    var flag=confirm("移入收藏后，将不再购物车显示，是否继续操作?");
+    if(flag==true){
+        alert("移入收藏成功!");
+    }
+}
+function del(){
+    var flag=confirm("您确定要删除商品吗?");
+    if(flag==true){
+        alert("删除成功!");
+    }
+}
+function minus(num){
+    var prices=document.getElementsByName("price")[num].value;
+    var count=parseInt(document.getElementsByName("amount")[num].value)-1;
+    if(count<1){
+        alert("不能再减了，再减就没有啦！");
+    }
+    else{
+        document.getElementsByName("amount")[num].value=count;
+        var totals=parseFloat(prices*count);
+        document.getElementById("price"+num).innerHTML="¥" +totals;
+        total();
+    }
+}
+function plus(num){
+    var prices=document.getElementsByName("price")[num].value;
+    var count=parseInt(document.getElementsByName("amount")[num].value)+1;
+    document.getElementsByName("amount")[num].value=count;
+    var totals=parseFloat(prices*count);
+    document.getElementById("price"+num).innerHTML="¥" +totals;
+    total();
+}
+function total(){
+    var prices=document.getElementsByName("price");
+    var count=document.getElementsByName("amount");
+    var sum=0;
+    for(var i=0; i<prices.length;i++){
+       sum+=prices[i].value*count[i].value;
+    }
+    document.getElementById("totalPrice").innerHTML="¥" +sum;
+}
+function GetMoney() {
+    alert("您的总金额是:");
+}
+total();
+</script>
+</body>
+</html>

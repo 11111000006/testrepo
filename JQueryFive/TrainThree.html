@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/nb.css">
+<body>
+	<img src="images/book.gif">
+	<div id="book">
+	<h1>你是人间的四月天</h1>
+	<p>笑响亮了四面风</p>
+	<p>轻灵在春的光艳中交舞看遍</p>
+	<p>你是一月早天的云烟</p>
+	<p><a href="#">查看全部</a></p>
+	</div>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	 $(document).ready(function(){
+     	$("#book h1").click(function(){
+              $("h1").addClass("title");
+              $(this).next().css("color","green");
+     	});
+     });
+</script>
+</body>
+</html>

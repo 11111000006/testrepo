@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="button" name="btn"  value="计算两数运算结果" onclick="study()"/>
+<script type="text/javascript">
+	var scoreAll=0;
+    function study() {
+    	var count=prompt("请输入考试数量：");
+    	if(isNaN(count)){
+    		 alert("您输入的是一个非数字");
+    	}else{
+        var num=new Array();
+	    for (var i = 0; count>i; i++) {
+		result=prompt("请输入第"+(i+1)+"门科目成绩");
+		num[i]=result[i];
+	    if(result<0){
+	    	alert("成绩不能为负数");
+	    	break;
+	    }
+	     if(num[i]>0){
+         scoreAll=scoreAll+parseInt(num[i]);
+	    }  
+	    }
+	     alert(count+"门科目的总成绩是"+scoreAll);
+          
+	}
+    }
+</script>
+</body>
+</html>

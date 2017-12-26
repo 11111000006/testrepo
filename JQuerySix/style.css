@@ -1,0 +1,11 @@
+.main{
+	 width:500px;
+	}
+.left{
+	width:200px;
+	float:left;
+}
+.right{
+	width:300px;
+	float:left;
+}
